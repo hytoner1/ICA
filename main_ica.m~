@@ -26,8 +26,7 @@ r = .0;
 noise = r*sig*randn(5,100);
 Y = Y0+ noise;
 
-% [Aest,Sest,West,Del] = FastICA(Y,n,opt,nmax,dmin);
-[Sest, West] = pca_ica(Y);
+[Aest,Sest,West,Del] = FastICA(Y,n,opt,nmax,dmin);
 Ta = bestmatch(A,Aest);
 Ts = bestmatch(S',Sest');
 iterSteps = length(Del)
@@ -44,7 +43,7 @@ figure; hold on;
     set(gca, 'YTicklabel', 1:5)
     
 
-%%
+
 figure;
 for j=1:3
     subplot(3,1,j);
